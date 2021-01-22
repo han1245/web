@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="jquery_css/jquery-ui.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery-ui.theme.min.css">
+    <script src="jquery.js"></script>
+    <script src="jquery_js/jquery-ui.min.js"></script>
+    <style>
+        .layer_popup{
+            position: absolute;
+            left: 50px;
+            top:50px;
+            cursor: move;
+        }
+    
+    </style>
+    <script>
+    $(function(){
+        $(".layer_popup").draggable();
+    });
+    </script>
+</head>
+<body>
+    <div class="layer_popup">
+        <img src="jquery_images/ui-icons_222222_256x240.png">
+    </div>
+</body>
+</html>
