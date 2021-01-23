@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery_plugin4</title>
+    <link rel="stylesheet" href="jquery_css/jquery-ui.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery.bxslider.min.css">
+    <script src="jquery.js"></script>
+    <script src="jquery_js/jquery-ui.min.js"></script>
+    <script src="jquery_js/jquery.bxslider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" integrity="sha512-aUhL2xOCrpLEuGD5f6tgHbLYEXRpYZ8G5yD+WlFrXrPy2IrWBlu6bih5C9H6qGsgqnU6mgx6KtU8TreHpASprw==" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin:0;
+            padding: 0;
+        }
+        ul, li {
+            list-style: none;
+        }
+        .faq{margin:20px 0;}
+        .faq button{
+            width: 100%;
+            text-align: left;
+            padding: 5px;
+            background: none;
+            border: none;
+            border-bottom: 1px solid #000;
+            cursor:pointer;
+        }
+        .cont{
+            padding: 10px;
+            background-color: #efefef;
+        }
+        .faq li > div{display: none;}    
+    </style>
+    
+    <script>
+        $(function(){
+          $.fn.extend({ //플러그인 제작 메서드
+              faq: function() { 
+                  var ts= $(this);
+                  $.each(ts, function(i,o){ //요소의 개수만큼 함수 실행
+                    $("button",o).on("click",tabmenu);
+                     function tabmenu() { 
+                         if($(this).parent().next().is(":hidden")) {
+                            $("li>div:visible",o).hide();
+                            $(this).parent().next().show();
+                         } else {
+                             $("li>div:visible",o).hide();
+                         }
+                     }
+                  });
+              }
+          });
+            $(".faq").faq();
+        });
+    </script>
+</head>
+<body>
+   <h1>질문제목1</h1>
+   <div class="faq">
+       <ul>
+           <li>
+               <p><button>Q1. 자주 묻는 질문 내용?</button></p>
+               <div>
+                   <div class="cont">답변 내용1</div>
+               </div>
+           </li>
+           <li>
+               <p><button>Q2. 자주 묻는 질문 내용?</button></p>
+               <div>
+                   <div class="cont">답변 내용2</div>
+               </div>
+           </li>
+       </ul>
+   </div>
+   <h1>질문제목2</h1>
+   <div class="faq">
+       <ul>
+           <li>
+               <p><button>Q1. 자주 묻는 질문 내용?</button></p>
+               <div>
+                   <div class="cont">답변 내용1</div>
+               </div>
+           </li>
+           <li>
+               <p><button>Q2. 자주 묻는 질문 내용?</button></p>
+               <div>
+                   <div class="cont">답변 내용2</div>
+               </div>
+           </li>
+       </ul>
+   </div>
+</body>
+</html>

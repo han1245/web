@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery UI Datepicker - Default functionality</title>
+    <link rel="stylesheet" href="jquery_css/jquery-ui.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery-ui.theme.min.css">
+    <script src="jquery.js"></script>
+    <script src="jquery_js/jquery-ui.min.js"></script>
+    <style>
+        #startDate {
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        $(function(){
+           $("#startDate").datepicker({
+              minDate:+1,
+              maxDate:"+1M"
+           });
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <label for ="startDate">날짜 시작일 </label><br> <!--label for값과 input id값을 같이 하면 서로 연결이 됨.-->
+        <input type="text" name="startDate" id="startDate">
+    </p>
+</body>
+</html>

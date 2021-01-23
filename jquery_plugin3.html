@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery_plugin3</title>
+    <link rel="stylesheet" href="jquery_css/jquery-ui.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery.bxslider.min.css">
+    <script src="jquery.js"></script>
+    <script src="jquery_js/jquery-ui.min.js"></script>
+    <script src="jquery_js/jquery.bxslider.min.js"></script>
+    <style>
+        
+    </style>
+    <script>
+        $(function(){
+           $(".slide_gallery").bxSlider({
+               mode: 'fade',
+               captions: true,
+               auto: true,
+               autoControls: true,
+               stopAutoOnClick: true,
+               pager: true
+           });
+        });
+    </script>
+</head>
+<body>
+    <div id="gallery_wrap">
+        <ul class="slide_gallery">
+            <li><img src="jquery_images/s1_1.png" alt=""></li>
+            <li><img src="jquery_images/s2_1.png" alt=""></li>
+            <li><img src="jquery_images/s3_1.png" alt=""></li>
+            <li><img src="jquery_images/s4_1.png" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

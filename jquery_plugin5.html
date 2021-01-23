@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery_plugin4</title>
+    <link rel="stylesheet" href="jquery_css/jquery-ui.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery.bxslider.min.css">
+    <script src="jquery.js"></script>
+    <script src="jquery_js/jquery-ui.min.js"></script>
+    <script src="jquery_js/jquery.bxslider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" integrity="sha512-aUhL2xOCrpLEuGD5f6tgHbLYEXRpYZ8G5yD+WlFrXrPy2IrWBlu6bih5C9H6qGsgqnU6mgx6KtU8TreHpASprw==" crossorigin="anonymous"></script>
+    <style>
+        
+    </style>
+    <script>
+        $(function(){
+          $.fn.extend({
+              open: function(eventType, message) {
+                  var ts= $(this);
+                  $.each(ts, function(i,o){
+                     $(o).on(eventType, function(){
+                         alert(message);
+                     }); 
+                  });
+              }
+          });
+            $(".btn1").open("mouseover","welcome");
+            $(".btn2").open("click","hello!");
+            $(".btn3").open("mouseenter","so hot!");
+        });
+    </script>
+</head>
+<body>
+   <p><button class="btn1">버튼1</button></p>
+   <p><button class="btn2">버튼2</button></p>
+   <p><button class="btn3">버튼3</button></p>
+</body>
+</html>

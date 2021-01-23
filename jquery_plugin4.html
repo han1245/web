@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery_plugin4</title>
+    <link rel="stylesheet" href="jquery_css/jquery-ui.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="jquery_css/jquery.bxslider.min.css">
+    <script src="jquery.js"></script>
+    <script src="jquery_js/jquery-ui.min.js"></script>
+    <script src="jquery_js/jquery.bxslider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" integrity="sha512-aUhL2xOCrpLEuGD5f6tgHbLYEXRpYZ8G5yD+WlFrXrPy2IrWBlu6bih5C9H6qGsgqnU6mgx6KtU8TreHpASprw==" crossorigin="anonymous"></script>
+    <style>
+        
+    </style>
+    <script>
+        $(function(){
+          if($.cookie("popup")=="none") {
+              $("#notice_wrap").hide();
+          }
+            
+         var $expChk = $("#expiresChk");
+        $(".closeBtn").on("click", closePop);
+            
+            function closePop() {
+                if($expChk.is(":checked")) {
+                    $.cookie("popup","none", {expires:1, path:"/"});
+                }
+                $("notice_wrap").fadeOut("fast");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="notice_wrap">
+        <img src="jquery_images/s1_1.png" alt="공지사항">
+        <p class="closeWrap">
+            <input type="checkbox" name="expiresChk" id="expiresChk">
+            <label for="expiresChk">3일 동안 이 창 열지 않기</label>
+            <button class="closeBtn">닫기</button>
+        </p>
+    </div>
+</body>
+</html>
